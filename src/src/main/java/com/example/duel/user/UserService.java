@@ -268,7 +268,7 @@ public class UserService {
             // 이메일로 인증코드 전송
             MimeMessage message = javaMailSender.createMimeMessage();
             message.addRecipients(Message.RecipientType.TO, email);
-            message.setSubject("[TIL-y] 인증코드가 도착했습니다.");
+            message.setSubject("[DUEL] 인증코드가 도착했습니다.");
             message.setText(getEmailContent(code), "utf-8", "html");
             javaMailSender.send(message);
 
