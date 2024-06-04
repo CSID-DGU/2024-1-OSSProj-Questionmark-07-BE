@@ -6,6 +6,9 @@ import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.example.duel.user.Role;
 import com.example.duel.user.User;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,18 +20,32 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.GenericFilterBean;
+
 import java.io.IOException;
 
 @Slf4j
-public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
+@Component
+@RequiredArgsConstructor
+public class JwtAuthenticationFilter extends GenericFilterBean {
 
-    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
-        super(authenticationManager);
-    }
+//    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
+//        super(authenticationManager);
+//    }
+
+    private final JWTProvider jwtProvider;
+
+//    @Override
+//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+//
+//    }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        String jwt = request.getHeader(JWTProvider.HEADER);
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        String jwt = httpServletRequest.getHeader(JWTProvider.HEADER);
+
 
         if (jwt == null) {
             chain.doFilter(request, response);
