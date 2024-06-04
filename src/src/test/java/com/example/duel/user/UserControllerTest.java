@@ -99,7 +99,7 @@ public class UserControllerTest {
     public void user_join_success_test() throws Exception {
 
         // given
-        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("test@nate.com", "test", "test1234!");
+        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("testnate.com", "test", "test1234!", "test1234!");
 
         String requestBody = om.writeValueAsString(requestDTO);
 
@@ -120,7 +120,7 @@ public class UserControllerTest {
     public void user_join_fail_test_1() throws Exception {
 
         // given
-        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("testnate.com", "test", "test1234!");
+        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("testnate.com", "test", "test1234!", "test1234!");
 
         String requestBody = om.writeValueAsString(requestDTO);
 
@@ -141,7 +141,7 @@ public class UserControllerTest {
     public void user_join_fail_test_2() throws Exception {
 
         // given
-        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("test@nate.com", "test", "test1234");
+        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("testnate.com", "test", "test1234!", "test1234!");
 
         String requestBody = om.writeValueAsString(requestDTO);
 
@@ -162,7 +162,7 @@ public class UserControllerTest {
     public void user_join_fail_test_3() throws Exception {
 
         // given
-        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("test@nate.com", "test", "te");
+        UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO("testnate.com", "test", "test1234!", "test1234!");
 
         String requestBody = om.writeValueAsString(requestDTO);
 

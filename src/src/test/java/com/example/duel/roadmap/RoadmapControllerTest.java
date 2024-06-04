@@ -215,7 +215,8 @@ public class RoadmapControllerTest {
         steps.add(step1);
 
         // 로드맵
-        RoadmapRequest.RoadmapDTO roadmap = new RoadmapRequest.RoadmapDTO("new JAVA - 생활 코딩", "새로운 버젼 입니다", "modifiedCode1234", false, true);
+        RoadmapRequest.RoadmapDTO roadmap = new RoadmapRequest.RoadmapDTO("생활코딩","new JAVA - 생활 코딩", "새로운 버젼 입니다", "modifiedCode1234", false, true);
+
 
         RoadmapRequest.UpdateRoadmapDTO requestDTO = new RoadmapRequest.UpdateRoadmapDTO("생활 코딩","새로운 버젼 입니다", true , true );
 
@@ -261,7 +262,8 @@ public class RoadmapControllerTest {
         steps.add(step1);
 
         // 로드맵
-        RoadmapRequest.RoadmapDTO roadmap = new RoadmapRequest.RoadmapDTO(null, "새로운 버젼 입니다", "modifiedCode1234", false, true);
+        RoadmapRequest.RoadmapDTO roadmap = new RoadmapRequest.RoadmapDTO("생활코딩","new JAVA - 생활 코딩", "새로운 버젼 입니다", "modifiedCode1234", false, true);
+
 
 
         RoadmapRequest.UpdateRoadmapDTO requestDTO = new RoadmapRequest.UpdateRoadmapDTO(null,"새로운 버젼 입니다", true, true );
@@ -308,7 +310,8 @@ public class RoadmapControllerTest {
         steps.add(step1);
 
         // 로드맵
-        RoadmapRequest.RoadmapDTO roadmap = new RoadmapRequest.RoadmapDTO("new JAVA - 생활 코딩", "새로운 버젼 입니다", "modifiedCode1234", false, true);
+        RoadmapRequest.RoadmapDTO roadmap = new RoadmapRequest.RoadmapDTO("생활코딩","new JAVA - 생활 코딩", "새로운 버젼 입니다", "modifiedCode1234", false, true);
+
 
         RoadmapRequest.UpdateRoadmapDTO requestDTO = new RoadmapRequest.UpdateRoadmapDTO(roadmap.name(), roadmap.description(), roadmap.isPublic(), roadmap.isRecruit());
 
