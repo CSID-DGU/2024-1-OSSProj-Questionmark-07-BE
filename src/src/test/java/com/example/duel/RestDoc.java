@@ -28,6 +28,8 @@ public class RestDoc {
                 Preprocessors.preprocessRequest(Preprocessors.prettyPrint()),
                 Preprocessors.preprocessResponse(Preprocessors.prettyPrint()));
 
+        WebApplicationContext webApplicationContext = null;
+        RestDocumentationContextProvider restDocumentation = null;
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
                 .addFilter(new CharacterEncodingFilter(StandardCharsets.UTF_8.name(), true))
                 .apply(MockMvcRestDocumentation.documentationConfiguration(restDocumentation))
