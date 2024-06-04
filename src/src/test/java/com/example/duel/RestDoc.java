@@ -23,8 +23,7 @@ public class RestDoc {
     protected RestDocumentationResultHandler document;
 
     @BeforeEach
-    private void setup(WebApplicationContext webApplicationContext,
-                       RestDocumentationContextProvider restDocumentation) {
+    public void setup() {
         this.document = MockMvcRestDocumentation.document("{class-name}/{method-name}",
                 Preprocessors.preprocessRequest(Preprocessors.prettyPrint()),
                 Preprocessors.preprocessResponse(Preprocessors.prettyPrint()));
